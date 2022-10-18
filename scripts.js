@@ -9,5 +9,29 @@ function getComputerChoice() {
     return choices[Math.ceil(Math.random() * 3)];
 }
 
-/* single round of rock, paper, scissors - player selects (case-insensitive), computer selects, declare winner */
+/* single round of rock, paper, scissors*/
+/* take player's selection (case-insensitive) and computer's selection as input
+set conditions to decide who wins
+declare whether payer wins or loses and what item beat what */
+function playRound(playerSelection, computerSelection) {
+    playerSelection.toLowerCase();
+    playerSelection = playerSelection[0].toUpperCase() + playerSelection.slice(1);
+    if(playerSelection === 'Rock' || playerSelection === 'Paper' || playerSelection === 'Scissors'){
+        if(playerSelection === computerSelection) {
+            return `It's a tie! You both chose ${computerSelection}.`;
+        } else if(playerSelection === 'Rock' && computerSelection === 'Scissors') {
+            return `You won! ${playerSelection} beats ${computerSelection}.`;
+        } else if(playerSelection === 'Scissors' && computerSelection === 'Paper') {
+            return `You won! ${playerSelection} beats ${computerSelection}.`;
+        } else if(playerSelection === 'Paper' && computerSelection === 'Rock') {
+            return `You won! ${playerSelection} beats ${computerSelection}.`;
+        } else {
+            return `You lost! ${computerSelection} beats ${playerSelection}.`
+        }
+
+    } else {
+        return `Your choice was invalid. Try Again.`
+    }
+}
+
 /* game plays for 5 rounds - keeps score and declares winner at the the end */
