@@ -14,7 +14,7 @@ function getComputerChoice() {
 /* prompt player for selection, take player's selection (case-insensitive) and computer's selection as input
 set conditions to decide who wins
 declare whether payer wins or loses and what item beat what */
-function playRound(playerSelection, computerSelection) {
+function playRound(computerSelection) {
     let playerSelection = prompt('What do you choose - Rock, Paper, or Scissors?', '');
     playerSelection = playerSelection.toLowerCase();
     playerSelection = playerSelection[0].toUpperCase() + playerSelection.slice(1);
@@ -40,5 +40,4 @@ function playRound(playerSelection, computerSelection) {
 /* add one point to winners overall score per round
 if player enters invalid choice restart round
 declare winner after 5 successful rounds */
-
 
