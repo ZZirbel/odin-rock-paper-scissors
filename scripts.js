@@ -1,4 +1,5 @@
 /* player vs computer in rock, paper, scissors */
+
 /* computer randomly chooses rock, paper, or scissors */ 
 function getComputerChoice() {
     const choices = {
@@ -10,11 +11,12 @@ function getComputerChoice() {
 }
 
 /* single round of rock, paper, scissors*/
-/* take player's selection (case-insensitive) and computer's selection as input
+/* prompt player for selection, take player's selection (case-insensitive) and computer's selection as input
 set conditions to decide who wins
 declare whether payer wins or loses and what item beat what */
 function playRound(playerSelection, computerSelection) {
-    playerSelection.toLowerCase();
+    let playerSelection = prompt('What do you choose - Rock, Paper, or Scissors?', '');
+    playerSelection = playerSelection.toLowerCase();
     playerSelection = playerSelection[0].toUpperCase() + playerSelection.slice(1);
     if(playerSelection === 'Rock' || playerSelection === 'Paper' || playerSelection === 'Scissors'){
         if(playerSelection === computerSelection) {
@@ -35,3 +37,8 @@ function playRound(playerSelection, computerSelection) {
 }
 
 /* game plays for 5 rounds - keeps score and declares winner at the the end */
+/* add one point to winners overall score per round
+if player enters invalid choice restart round
+declare winner after 5 successful rounds */
+
+
