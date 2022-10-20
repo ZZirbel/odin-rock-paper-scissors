@@ -54,8 +54,8 @@ function game() {
     computerTotal = 0;
     for(let i = 1; i <= 5; i++) {
     playRound(getComputerChoice());
-        console.log(playerTotal);
-    console.log(computerTotal);
+    console.log(`Your Total: ${playerTotal}`);
+    console.log(`Computers Total: ${computerTotal}`);
     }
     if(playerTotal > computerTotal) {
         console.log(`Congratulations! You beat the computer by ${playerTotal - computerTotal}.`);
