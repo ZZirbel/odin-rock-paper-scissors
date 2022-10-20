@@ -26,22 +26,22 @@ function playRound(computerSelection) {
  playerSelection = playerSelection[0].toUpperCase() + playerSelection.slice(1);
     if(playerSelection === 'Rock' || playerSelection === 'Paper' || playerSelection === 'Scissors'){
         if(playerSelection === computerSelection) {
-            return console.log(`It's a tie! You both chose ${computerSelection}.`);
+            console.log(`It's a tie! You both chose ${computerSelection}.`);
         } else if(playerSelection === 'Rock' && computerSelection === 'Scissors') {
             playerTotal += 1;
-            return console.log(`You won! ${playerSelection} beats ${computerSelection}.`);
+            console.log(`You won! ${playerSelection} beats ${computerSelection}.`);
         } else if(playerSelection === 'Scissors' && computerSelection === 'Paper') {
             playerTotal += 1;
-            return console.log(`You won! ${playerSelection} beats ${computerSelection}.`);
+            console.log(`You won! ${playerSelection} beats ${computerSelection}.`);
         } else if(playerSelection === 'Paper' && computerSelection === 'Rock') {
             playerTotal += 1;
-            return console.log(`You won! ${playerSelection} beats ${computerSelection}.`);
+            console.log(`You won! ${playerSelection} beats ${computerSelection}.`);
         } else {
             computerTotal += 1;
-            return console.log(`You lost! ${computerSelection} beats ${playerSelection}.`);
+            console.log(`You lost! ${computerSelection} beats ${playerSelection}.`);
         }
     } else {
-        return console.log(`Your choice was invalid. Try Again.`);
+        console.log(`Your choice was invalid. Try Again.`);
     }
     
 }
