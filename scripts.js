@@ -19,13 +19,14 @@ function getPlayerChoice() {
 }
 
 /* single round of rock, paper, scissors*/
+/* player and computer total points variables */
+let playerTotal = 0;
+let computerTotal = 0;
+
 /* prompt player for selection, take player's selection (case-insensitive) and computer's selection as input
 set conditions to decide who wins
 gives winner a point
 declare whether payer wins or loses and what item beat what */
-let playerTotal = 0;
-let computerTotal = 0;
-
 function playRound(playerSelection, computerSelection) {
     if(playerSelection === 'Rock' || playerSelection === 'Paper' || playerSelection === 'Scissors'){
         if(playerSelection === computerSelection) {
