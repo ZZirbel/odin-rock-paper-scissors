@@ -49,4 +49,19 @@ function playRound(computerSelection) {
 /* reset scores at start of game
 loop through 5 rounds of rock, paper, scissors calling playRound function
 output string declaring overall winner and total that player won or lost by */
-
+function game() {
+    playerTotal = 0;
+    computerTotal = 0;
+    for(let i = 1; i <= 5; i++) {
+    playRound(getComputerChoice());
+        console.log(playerTotal);
+    console.log(computerTotal);
+    }
+    if(playerTotal > computerTotal) {
+        console.log(`Congratulations! You beat the computer by ${playerTotal - computerTotal}.`);
+    }else if(playerTotal < computerTotal) {
+        console.log(`Better luck next time! You lost to the computer by ${computerTotal - playerTotal}.`);
+    }else{
+        console.log(`Wow it's a draw!`);
+    }
+}
