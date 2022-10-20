@@ -10,24 +10,19 @@ function getComputerChoice() {
     return choices[Math.ceil(Math.random() * 3)];
 }
 
-/* prompt player selection and change to first letter casing */
-function getPlayerChoice() {
-    let playerChoice = prompt('What do you choose - Rock, Paper, or Scissors?', '');
-    playerChoice = playerChoice.toLowerCase();
-    playerChoice = playerChoice[0].toUpperCase() + playerChoice.slice(1);
-    return playerChoice;
-}
-
 /* single round of rock, paper, scissors*/
 /* player and computer total points variables */
 let playerTotal = 0;
 let computerTotal = 0;
 
-/* prompt player for selection, take player's selection (case-insensitive) and computer's selection as input
+/* take player's selection and computer's selection as input
 set conditions to decide who wins
-gives winner a point
+add a point to winners total points
 declare whether payer wins or loses and what item beat what */
-function playRound(playerSelection, computerSelection) {
+function playRound(computerSelection) {
+    let playerSelection = prompt('What do you choose - Rock, Paper, or Scissors?', '');
+ playerSelection = playerSelection.toLowerCase();
+ playerSelection = playerSelection[0].toUpperCase() + playerSelection.slice(1);
     if(playerSelection === 'Rock' || playerSelection === 'Paper' || playerSelection === 'Scissors'){
         if(playerSelection === computerSelection) {
             return console.log(`It's a tie! You both chose ${computerSelection}.`);
@@ -50,8 +45,8 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
-/* game plays for 5 rounds - keeps score and declares winner at the the end */
+/* game plays for 5 rounds and declares winner at the the end */
 /* reset scores at start of game
 loop through 5 rounds of rock, paper, scissors calling playRound function
-output string declaring overall winner and total player won or lost by */
+output string declaring overall winner and total that player won or lost by */
 
