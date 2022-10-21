@@ -9,11 +9,11 @@ function getComputerChoice() {
     return choices[Math.ceil(Math.random() * 3)];
 }
 
-/* variables to keep score for player and computer */
 let playerTotal = 0;
 let computerTotal = 0;
 
-/* function called for each round of game */
+/* function called for each round of game - PlayerSelection variable worked best for prompting
+player to input choice when called inside function */
 function playRound(computerSelection) {
     let playerSelection = prompt('What do you choose - Rock, Paper, or Scissors?', 'Choose one');
  playerSelection = playerSelection.toLowerCase();
