@@ -1,12 +1,8 @@
 
 /* randomizes computers choice */ 
 function getComputerChoice() {
-    const choices = {
-        1: 'Rock',
-        2: 'Paper',
-        3: 'Scissors'
-    };
-    return choices[Math.ceil(Math.random() * 3)];
+    const computerChoices = ['Rock', 'Paper', 'Scissors'];
+    return computerChoices[Math.floor(Math.random() * 3)];
 }
 
 let playerTotal = 0;
