@@ -1,6 +1,5 @@
-/* player vs computer in rock, paper, scissors */
 
-/* computer randomly chooses rock, paper, or scissors */ 
+/* randomizes computers choice */ 
 function getComputerChoice() {
     const choices = {
         1: 'Rock',
@@ -10,16 +9,11 @@ function getComputerChoice() {
     return choices[Math.ceil(Math.random() * 3)];
 }
 
-/* player and computer total points variables */
+/* variables to keep score for player and computer */
 let playerTotal = 0;
 let computerTotal = 0;
 
-/* single round of rock, paper, scissors 
-    - take computer's selection as input
-    - prompt player for selection
-    - decide who wins
-    - add a point to winners total points
-    - declare whether player wins or loses and what item beat what */
+/* function called for each round of game */
 function playRound(computerSelection) {
     let playerSelection = prompt('What do you choose - Rock, Paper, or Scissors?', 'Choose one');
  playerSelection = playerSelection.toLowerCase();
@@ -46,10 +40,7 @@ function playRound(computerSelection) {
     
 }
 
-/* game plays until player or computer reach 5 points and declares winner at the the end
-    - reset scores at start of game
-    - loop through playRound function
-    - output string declaring overall winner and total that player won or lost by */
+/* full game - first to 5 points wins */
 function game() {
     playerTotal = 0;
     computerTotal = 0;
