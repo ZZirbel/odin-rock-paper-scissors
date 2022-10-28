@@ -9,32 +9,27 @@
   </head>
   <body>
     <header>
-      <h1>Rock Paper Scissors Game</h1>
-      <p>
-        <i>This game is currently played in the console.</i>
-      </p>
+      <h1 id="title">Rock Paper Scissors</h1>
+      <p class="text">Think you have what it takes to outwit the computer?</p>
     </header>
     <main>
-      <h2>Follow the instructions below to play this game:</h2>
-      <ol>
-        <li>Open the Browser Console with <strong>CTRL + SHIFT + J</strong></li>
-        <li>
-          Type <strong>game();</strong> into the console and hit
-          <strong>ENTER</strong> -
-          <i
-            >a prompt window will appear at the top of your browser when the
-            game begins</i
-          >
-        </li>
-        <li>
-          You are playing against the computer. Be the first to 5 points and you
-          win!
-        </li>
-        <li>Please give me feedback on the game and code so I can improve!</li>
-        <li>ENJOY!</li>
-      </ol>
+      <section class="scores">
+        <p class="score">
+          Your Score: <span id="player-score" class="score-tally"></span>
+        </p>
+        <p class="score">
+          Computer's Score:
+          <span id="computer-score" class="score-tally"></span>
+        </p>
+      </section>
+      <button id="rock" value="Rock">Rock</button>
+      <button id="paper" value="Paper">Paper</button>
+      <button id="scissors" value="Scissors">Scissors</button>
+      <div id="result"></div>
     </main>
-    <footer></footer>
+    <footer>
+      <p class="foot">&copy; Zan Zirbel 2022</p>
+    </footer>
     <script src="scripts.js"></script>
   </body>
 </html>
