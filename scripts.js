@@ -51,4 +51,13 @@ buttons.forEach((button) => {
   button.addEventListener("click", playRound);
 });
 
+function keyPlay(e) {
+  const key = document.querySelector(`button[data-key='${e.keyCode}']`);
+  if (!key) return;
+  this.textContent = key.textContent;
+  playRound();
+}
+
+window.addEventListener("keypress", keyPlay);
+
 const result = document.querySelector("#result");
