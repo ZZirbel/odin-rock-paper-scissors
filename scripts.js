@@ -9,24 +9,45 @@ let computerTotal = document.querySelector("#computer-score");
 
 /* function called for each round of game - PlayerSelection variable worked best for prompting
 player to input choice when called inside function */
+let round = 1;
 
 function playRound(playerSelection) {
   playerSelection = this.textContent;
   computerSelection = getComputerChoice();
-  if (playerSelection === computerSelection) {
-    result.textContent = `It's a tie! You both chose ${computerSelection}.`;
-  } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-    playerTotal.textContent += "X";
-    result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
-  } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-    playerTotal.textContent += "X";
-    result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
-  } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-    playerTotal.textContent += "X";
-    result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
+  if (round <= 5) {
+    //create function to check round count at end of each play and immediately return final result if 5 (this does not do that now)
+    if (playerSelection === computerSelection) {
+      result.textContent = `It's a tie! You both chose ${computerSelection}.`;
+    } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+      playerTotal.textContent += "X";
+      result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
+      round++;
+    } else if (
+      playerSelection === "Scissors" &&
+      computerSelection === "Paper"
+    ) {
+      playerTotal.textContent += "X";
+      result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
+      round++;
+    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+      playerTotal.textContent += "X";
+      result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
+      round++;
+    } else {
+      computerTotal.textContent += "X";
+      result.textContent = `You lost! ${computerSelection} beats ${playerSelection}.`;
+      round++;
+    }
   } else {
-    computerTotal.textContent += "X";
-    result.textContent = `You lost! ${computerSelection} beats ${playerSelection}.`;
+    if (playerTotal.textContent.length > computerTotal.textContent.length) {
+      result.textContent = `You Win!`;
+    } else if (
+      playerTotal.textContent.length < computerTotal.textContent.length
+    ) {
+      result.textContent = `You Lose!`;
+    } else {
+      result.textContent = `You Tied!`;
+    }
   }
 }
 
