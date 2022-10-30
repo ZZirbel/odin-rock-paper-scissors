@@ -45,23 +45,25 @@ function playRound(playerSelection) {
       result.textContent = `You Win!`;
       playerFinalScore.textContent = `${playerTotal.textContent.length}`;
       computerFinalScore.textContent = `${computerTotal.textContent.length}`;
+      resetGame.style.display = "block";
     } else if (
       playerTotal.textContent.length < computerTotal.textContent.length
     ) {
       result.textContent = `You Lose!`;
       playerFinalScore.textContent = `${playerTotal.textContent.length}`;
       computerFinalScore.textContent = `${computerTotal.textContent.length}`;
+      resetGame.style.display = "block";
     }
   }
 }
 
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".selection");
 buttons.forEach((button) => {
   button.addEventListener("click", playRound);
 });
 
 function keyPlay(e) {
-  const key = document.querySelector(`button[data-key='${e.keyCode}']`);
+  const key = document.querySelector(`.selection[data-key='${e.keyCode}']`);
   if (!key) return;
   this.textContent = key.textContent;
   playRound();
@@ -79,6 +81,10 @@ function newGame(e) {
   computerFinalScore.textContent = "";
   result.textContent = "";
   round = 0;
+  resetGame.style.display = "none";
 }
+
+const resetGame = document.querySelector("#new-game");
+resetGame.style.display = "none";
 
 const result = document.querySelector("#result");
