@@ -1,4 +1,4 @@
-/* randomizes computers choice */
+/* randomized computer choice */
 function getComputerChoice() {
   const computerChoices = ["Rock", "Paper", "Scissors"];
   return computerChoices[Math.floor(Math.random() * 3)];
@@ -9,8 +9,7 @@ let computerTotal = document.querySelector("#computer-score");
 let playerFinalScore = document.querySelector("#player-final");
 let computerFinalScore = document.querySelector("#computer-final");
 
-/* function called for each round of game - PlayerSelection variable worked best for prompting
-player to input choice when called inside function */
+/* 5 round gameplay using keyboard or buttons*/
 let round = 0;
 
 function playRound(playerSelection) {
@@ -57,10 +56,17 @@ function playRound(playerSelection) {
   }
 }
 
+/* gameplay with buttons */
 const buttons = document.querySelectorAll(".selection");
 buttons.forEach((button) => {
   button.addEventListener("click", playRound);
 });
+
+const result = document.querySelector("#result");
+
+/* gameplay using keyboard */
+window.addEventListener("keypress", keyPlay);
+window.addEventListener("keypress", newGame);
 
 function keyPlay(e) {
   const key = document.querySelector(`.selection[data-key='${e.keyCode}']`);
@@ -69,10 +75,8 @@ function keyPlay(e) {
   playRound();
 }
 
-window.addEventListener("keypress", keyPlay);
-window.addEventListener("keypress", newGame);
-
 function newGame(e) {
+  //reset all fields
   if (round !== 5) return;
   if (e.keyCode !== 110) return;
   playerTotal.textContent = "";
@@ -84,7 +88,6 @@ function newGame(e) {
   resetGame.style.display = "none";
 }
 
+/* start new game text to toggled */
 const resetGame = document.querySelector("#new-game");
 resetGame.style.display = "none";
-
-const result = document.querySelector("#result");
