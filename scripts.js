@@ -6,16 +6,17 @@ function getComputerChoice() {
 
 let playerTotal = document.querySelector("#player-score");
 let computerTotal = document.querySelector("#computer-score");
+let playerFinalScore = document.querySelector("#player-final");
+let computerFinalScore = document.querySelector("#computer-final");
 
 /* function called for each round of game - PlayerSelection variable worked best for prompting
 player to input choice when called inside function */
-let round = 1;
+let round = 0;
 
 function playRound(playerSelection) {
   playerSelection = this.textContent;
   computerSelection = getComputerChoice();
-  if (round <= 5) {
-    //create function to check round count at end of each play and immediately return final result if 5 (this does not do that now)
+  if (round < 5) {
     if (playerSelection === computerSelection) {
       result.textContent = `It's a tie! You both chose ${computerSelection}.`;
     } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
@@ -38,15 +39,18 @@ function playRound(playerSelection) {
       result.textContent = `You lost! ${computerSelection} beats ${playerSelection}.`;
       round++;
     }
-  } else {
+  }
+  if (round === 5) {
     if (playerTotal.textContent.length > computerTotal.textContent.length) {
       result.textContent = `You Win!`;
+      playerFinalScore.textContent = `${playerTotal.textContent.length}`;
+      computerFinalScore.textContent = `${computerTotal.textContent.length}`;
     } else if (
       playerTotal.textContent.length < computerTotal.textContent.length
     ) {
       result.textContent = `You Lose!`;
-    } else {
-      result.textContent = `You Tied!`;
+      playerFinalScore.textContent = `${playerTotal.textContent.length}`;
+      computerFinalScore.textContent = `${computerTotal.textContent.length}`;
     }
   }
 }
