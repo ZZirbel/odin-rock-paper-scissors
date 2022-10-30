@@ -55,22 +55,6 @@ function playRound(playerSelection) {
   }
 }
 
-/* full game - first to 5 points wins */
-/* function game() {
-    playerTotal = 0;
-    computerTotal = 0;
-    while(playerTotal < 5 && computerTotal < 5) {
-    playRound(getComputerChoice());
-    console.log(`Your Total: ${playerTotal}`);
-    console.log(`Computers Total: ${computerTotal}`);
-    };
-    if(playerTotal > computerTotal) {
-        console.log(`Congratulations! You beat the computer by ${playerTotal - computerTotal}.`);
-    }else if(playerTotal < computerTotal) {
-        console.log(`Better luck next time! You lost to the computer by ${computerTotal - playerTotal}.`);
-    }
-} */
-
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", playRound);
@@ -84,5 +68,17 @@ function keyPlay(e) {
 }
 
 window.addEventListener("keypress", keyPlay);
+window.addEventListener("keypress", newGame);
+
+function newGame(e) {
+  if (round !== 5) return;
+  if (e.keyCode !== 110) return;
+  playerTotal.textContent = "";
+  computerTotal.textContent = "";
+  playerFinalScore.textContent = "";
+  computerFinalScore.textContent = "";
+  result.textContent = "";
+  round = 0;
+}
 
 const result = document.querySelector("#result");
