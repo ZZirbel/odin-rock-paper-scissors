@@ -9,13 +9,15 @@ let computerTotal = document.querySelector("#computer-score");
 let playerFinalScore = document.querySelector("#player-choice");
 let computerFinalScore = document.querySelector("#computer-choice");
 
-/* 5 round gameplay using keyboard or buttons*/
-let round = 0;
+/* gameplay using keyboard or buttons - first to 5 */
 
 function playRound(playerSelection) {
   playerSelection = this.textContent;
   computerSelection = getComputerChoice();
-  if (round < 5) {
+  if (
+    playerTotal.textContent.length < 5 &&
+    computerTotal.textContent.length < 5
+  ) {
     if (playerSelection === computerSelection) {
       result.textContent = `It's a tie! You both chose ${computerSelection}.`;
     } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
@@ -39,7 +41,10 @@ function playRound(playerSelection) {
       round++;
     }
   }
-  if (round === 5) {
+  if (
+    playerTotal.textContent.length === 5 ||
+    computerTotal.textContent.length === 5
+  ) {
     if (playerTotal.textContent.length > computerTotal.textContent.length) {
       result.textContent = `You Win!`;
       playerFinalScore.textContent = `${playerTotal.textContent.length}`;
