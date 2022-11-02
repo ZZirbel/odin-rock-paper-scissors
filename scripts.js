@@ -14,7 +14,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 function playRound(playerSelection) {
-  playerSelection = this.textContent;
+  playerSelection = this.id;
   computerSelection = getComputerChoice();
   playerTotal.style.display = "block";
   computerTotal.style.display = "block";
@@ -58,7 +58,7 @@ function playRound(playerSelection) {
 }
 
 /* gameplay with buttons */
-const buttons = document.querySelectorAll(".selection");
+const buttons = document.querySelectorAll(".choice-button");
 buttons.forEach((button) => {
   button.addEventListener("click", playRound);
 });
@@ -70,11 +70,23 @@ window.addEventListener("keypress", keyPlay);
 window.addEventListener("keypress", newGame);
 
 function keyPlay(e) {
-  const key = document.querySelector(`.selection[data-key='${e.keyCode}']`);
+  const key = document.querySelector(`.choice-button[data-key='${e.keyCode}']`);
   if (!key) return;
-  this.textContent = key.textContent;
+  this.id = key.id;
+  key.classList.add("button-active");
   playRound();
 }
+
+/* remove button animation once complete */
+function removeKeyTransition(e) {
+  if (e.propertyName !== "transform") return;
+  this.classList.remove("button-active");
+}
+
+const keys = document.querySelectorAll(".choice-button");
+keys.forEach((key) =>
+  key.addEventListener("transitionend", removeKeyTransition)
+);
 
 /* reset game */
 function newGame(e) {

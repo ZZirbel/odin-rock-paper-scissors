@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Tourney:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/068b62f776.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Rock Paper Scissors Game</title>
   </head>
   <body>
@@ -32,9 +42,17 @@
         </div>
       </section>
       <section class="buttons">
-        <button data-key="114" id="rock" class="selection">Rock</button>
-        <button data-key="112" id="paper" class="selection">Paper</button>
-        <button data-key="115" id="scissors" class="selection">Scissors</button>
+        <button class="choice-button" data-key="114" id="Rock">
+          <span class="selection">Rock</span
+          ><i class="fa-solid fa-hand-fist"></i>
+        </button>
+        <button class="choice-button" data-key="112" id="Paper">
+          <span class="selection">Paper</span><i class="fa-solid fa-hand"></i>
+        </button>
+        <button class="choice-button" data-key="115" id="Scissors">
+          <span class="selection">Scissors</span
+          ><i class="fa-solid fa-hand-peace"></i>
+        </button>
       </section>
       <section class="results">
         <div id="result"></div>
