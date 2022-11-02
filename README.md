@@ -22,3 +22,11 @@ _Currently this game can only be played in the console - **Instructions may diff
 ---
 
 _I will update this once I have applied HTML and CSS to this project._
+
+Credit:
+
+[Scissor icon created by Freepik - Flaticon](https://www.flaticon.com/free-icons/barber" title="barber icons)
+
+[Rock icon created by Freepik - Flaticon](https://www.flaticon.com/free-icons/mineral" title="mineral icons)
+
+[Paper icon created by juicy_fish - Flaticon](https://www.flaticon.com/free-icons/paper" title="paper icons)
