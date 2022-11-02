@@ -32,12 +32,34 @@ body {
     flex: 1 1 0;
 }
 
-.score.computer {
-    text-align: right;
+#player {
+    display: flex;
+    flex-direction: row;
+}
+
+#computer {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .score {
     margin: 0;
+}
+
+.progress-bar {
+    height: 18px;
+    width: 80px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+
+.progress {
+    height: 16px;
+    width: 16px;
+    border-radius: 3px;
+    background-color: orangered;
+    color: transparent;
 }
 
 .buttons {

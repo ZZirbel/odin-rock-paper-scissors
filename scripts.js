@@ -23,22 +23,18 @@ function playRound(playerSelection) {
     } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
       playerTotal.textContent += "X";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
-      round++;
     } else if (
       playerSelection === "Scissors" &&
       computerSelection === "Paper"
     ) {
       playerTotal.textContent += "X";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
-      round++;
     } else if (playerSelection === "Paper" && computerSelection === "Rock") {
       playerTotal.textContent += "X";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
-      round++;
     } else {
       computerTotal.textContent += "X";
       result.textContent = `You lost! ${computerSelection} beats ${playerSelection}.`;
-      round++;
     }
   }
   if (
@@ -82,14 +78,17 @@ function keyPlay(e) {
 
 function newGame(e) {
   //reset all fields
-  if (round !== 5) return;
+  if (
+    playerTotal.textContent.length !== 5 &&
+    computerTotal.textContent.length !== 5
+  )
+    return;
   if (e.keyCode !== 110) return;
   playerTotal.textContent = "";
   computerTotal.textContent = "";
   playerFinalScore.textContent = "";
   computerFinalScore.textContent = "";
   result.textContent = "";
-  round = 0;
   resetGame.style.display = "none";
 }
 

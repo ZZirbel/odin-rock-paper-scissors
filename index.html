@@ -14,12 +14,22 @@
     </header>
     <main>
       <section class="scores">
-        <p class="score player">
-          Your Score <span id="player-score" class="score-tally"></span>
-        </p>
-        <p class="score computer">
-          <span id="computer-score" class="score-tally"></span> Bots Score
-        </p>
+        <div id="player">
+          <p class="score player">Your Score</p>
+          <div class="progress-bar">
+            <div class="progress-container player">
+              <div id="player-score" class="progress"></div>
+            </div>
+          </div>
+        </div>
+        <div id="computer">
+          <p class="score computer">Bots Score</p>
+          <div class="progress-bar">
+            <div class="progress-container computer">
+              <div id="computer-score" class="progress"></div>
+            </div>
+          </div>
+        </div>
       </section>
       <section class="buttons">
         <button data-key="114" id="rock" class="selection">Rock</button>
