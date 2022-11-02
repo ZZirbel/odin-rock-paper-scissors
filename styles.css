@@ -30,11 +30,14 @@ body {
     color: var(--main-color);
     font-family: var(--title-font);
     font-weight: normal;
+    font-size: 60px;
+    margin: 20px auto;
 }
 
 .text {
     color: var(--font-color);
     font-family: var(--text-font);
+    text-align: center;
 }
 
 /* score layout and styling */
@@ -59,6 +62,7 @@ body {
 .score {
     color: var(--font-color);
     font-weight: bold;
+    font-family: var(--text-font);
 }
 
 .score.player {
@@ -72,7 +76,6 @@ body {
 }
 
 /* progress bar styling */
-
 .progress-container {
     height: 25px;
     width: 100%;
@@ -142,24 +145,27 @@ i {
 /* results styling */
 .results {
     height: 5vh;
-    margin: 10px auto;
+    margin: 10px auto 0 auto;
 }
 
 #result {
     text-align: center;
     color: var(--font-color);
     font-weight: bold;
+    font-family: var(--text-font);
 }
 
 #player-choice, #computer-choice {
     color: var(--main-color);
     font-size: 40px;
     font-weight: bold;
+    font-family: var(--text-font);
 }
 
 #new-game {
     text-align: center;
     color: var(--font-color);
+    font-family: var(--text-font);
 }
 
 /* gameplay styling */
@@ -174,4 +180,5 @@ i {
 /* footer styling */
 footer {
     color: var(--font-color);
+    font-family: var(--text-font);
 }
