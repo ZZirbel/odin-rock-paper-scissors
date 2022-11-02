@@ -6,8 +6,8 @@ function getComputerChoice() {
 
 let playerTotal = document.querySelector("#player-score");
 let computerTotal = document.querySelector("#computer-score");
-let playerFinalScore = document.querySelector("#player-final");
-let computerFinalScore = document.querySelector("#computer-final");
+let playerFinalScore = document.querySelector("#player-choice");
+let computerFinalScore = document.querySelector("#computer-choice");
 
 /* 5 round gameplay using keyboard or buttons*/
 let round = 0;
