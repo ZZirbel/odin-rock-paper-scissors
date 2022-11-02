@@ -14,22 +14,17 @@
     </header>
     <main>
       <section class="scores">
-        <p class="score">
-          Your Score: <span id="player-score" class="score-tally"></span>
+        <p class="score player">
+          Your Score <span id="player-score" class="score-tally"></span>
         </p>
-        <p class="score">
-          Computer's Score:
-          <span id="computer-score" class="score-tally"></span>
+        <p class="score computer">
+          <span id="computer-score" class="score-tally"></span> Bots Score
         </p>
       </section>
       <section class="buttons">
         <button data-key="114" id="rock" class="selection">Rock</button>
         <button data-key="112" id="paper" class="selection">Paper</button>
         <button data-key="115" id="scissors" class="selection">Scissors</button>
-      </section>
-      <section class="selections">
-        <div id="player-choice"></div>
-        <div id="computer-choice"></div>
       </section>
       <section class="results">
         <div id="result"></div>
@@ -38,6 +33,10 @@
           <div id="computer-final"></div>
         </div>
         <p id="new-game">Press 'N' to start a new game</p>
+      </section>
+      <section class="selections">
+        <div id="player-choice"></div>
+        <div id="computer-choice"></div>
       </section>
     </main>
     <footer>
