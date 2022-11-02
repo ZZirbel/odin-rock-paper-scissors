@@ -3,7 +3,12 @@
 }
 
 :root {
-
+--bg-color: #0F110C;
+--main-color: #F9E900;
+--font-color: #F7F7F9;
+--progress-color: #3D3B8E;
+--gameplay-color: #009CCB;
+--secondary-font-color: #918B76;
 }
 
 body {
@@ -14,10 +19,17 @@ body {
     margin: 0;
     min-height: 100vh;
     max-height: 100vh;
+    background-color: var(--bg-color);
+    font-size: 20px;
 }
 
 #title {
     text-align: center;
+    color: var(--main-color);
+}
+
+.text {
+    color: var(--font-color);
 }
 
 /* score layout and styling */
@@ -27,14 +39,21 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    margin-bottom: 5px;
 }
 
 #player, #computer {
     display: flex;
+    align-items: center;
 }
 
 #computer {
     flex-direction: row-reverse;
+}
+
+.score {
+    color: var(--font-color);
+    font-weight: bold;
 }
 
 .score.player {
@@ -52,18 +71,19 @@ body {
 .progress-container {
     height: 18px;
     width: 100%;
-    max-width: 80px;
-    min-width: 80px;
-    border: 1px solid black;
-    border-radius: 3px;
+    max-width: 150px;
+    min-width: 150px;
+    border: 3px solid var(--main-color);
+    border-radius: 5px;
+    padding: 1px;
+    z-index: 1;
 }
 
 .progress-container .progress {
     height: 100%;
     width: 0%;
-    border-radius: 3px;
-    background-color: orangered;
-    color: transparent;
+    max-width: 100%;
+    background-color: var(--progress-color);
     transition: 0.5s linear;
 }
 
@@ -84,28 +104,37 @@ body {
 
 /* results styling */
 .results {
-    height: 8vh;
+    height: 5vh;
     margin: 10px auto;
 }
 
 #result {
     text-align: center;
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+#player-choice, #computer-choice {
+    color: var(--main-color);
+    font-size: 40px;
+    font-weight: bold;
 }
 
 #new-game {
     text-align: center;
+    color: var(--font-color);
 }
 
 /* gameplay styling */
 .gameplay {
     display: flex;
-    max-height: 50vh;
-    height: calc(50vw);
+    max-height: 45vh;
+    height: 45vh;
     justify-content: space-around;
     align-items: center;
 }
 
-#player-choice #computer-choice {
-    width: 50vw;
+/* footer styling */
+footer {
+    color: var(--font-color);
 }
-

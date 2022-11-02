@@ -22,22 +22,22 @@ function playRound(playerSelection) {
     if (playerSelection === computerSelection) {
       result.textContent = `It's a tie! You both chose ${computerSelection}.`;
     } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-      playerTotal.style.width = playerTotal.offsetWidth + 16 + "px";
+      playerTotal.style.width = playerTotal.offsetWidth + 30 + "px";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
       playerScore++;
     } else if (
       playerSelection === "Scissors" &&
       computerSelection === "Paper"
     ) {
-      playerTotal.style.width = playerTotal.offsetWidth + 16 + "px";
+      playerTotal.style.width = playerTotal.offsetWidth + 30 + "px";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
       playerScore++;
     } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-      playerTotal.style.width = playerTotal.offsetWidth + 16 + "px";
+      playerTotal.style.width = playerTotal.offsetWidth + 30 + "px";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
       playerScore++;
     } else {
-      computerTotal.style.width = computerTotal.offsetWidth + 16 + "px";
+      computerTotal.style.width = computerTotal.offsetWidth + 30 + "px";
       result.textContent = `You lost! ${computerSelection} beats ${playerSelection}.`;
       computerScore++;
     }
@@ -76,8 +76,8 @@ function keyPlay(e) {
   playRound();
 }
 
+/* reset game */
 function newGame(e) {
-  //reset all fields
   if (playerScore !== 5 && computerScore !== 5) return;
   if (e.keyCode !== 110) return;
   playerTotal.style.display = "none";
@@ -92,6 +92,6 @@ function newGame(e) {
   resetGame.style.display = "none";
 }
 
-/* start new game text to toggled */
+/* start new game text to toggle */
 const resetGame = document.querySelector("#new-game");
 resetGame.style.display = "none";
