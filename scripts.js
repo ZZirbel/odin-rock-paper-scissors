@@ -4,54 +4,54 @@ function getComputerChoice() {
   return computerChoices[Math.floor(Math.random() * 3)];
 }
 
-let playerTotal = document.querySelector("#player-score");
-let computerTotal = document.querySelector("#computer-score");
+let playerTotal = document.querySelector("#player-score.progress");
+let computerTotal = document.querySelector("#computer-score.progress");
 let playerFinalScore = document.querySelector("#player-choice");
 let computerFinalScore = document.querySelector("#computer-choice");
 
 /* gameplay using keyboard or buttons - first to 5 */
+let playerScore = 0;
+let computerScore = 0;
 
 function playRound(playerSelection) {
   playerSelection = this.textContent;
   computerSelection = getComputerChoice();
-  if (
-    playerTotal.textContent.length < 5 &&
-    computerTotal.textContent.length < 5
-  ) {
+  playerTotal.style.display = "block";
+  computerTotal.style.display = "block";
+  if (playerScore < 5 && computerScore < 5) {
     if (playerSelection === computerSelection) {
       result.textContent = `It's a tie! You both chose ${computerSelection}.`;
     } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-      playerTotal.textContent += "X";
+      playerTotal.style.width = playerTotal.offsetWidth + 16 + "px";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
+      playerScore++;
     } else if (
       playerSelection === "Scissors" &&
       computerSelection === "Paper"
     ) {
-      playerTotal.textContent += "X";
+      playerTotal.style.width = playerTotal.offsetWidth + 16 + "px";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
+      playerScore++;
     } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-      playerTotal.textContent += "X";
+      playerTotal.style.width = playerTotal.offsetWidth + 16 + "px";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
+      playerScore++;
     } else {
-      computerTotal.textContent += "X";
+      computerTotal.style.width = computerTotal.offsetWidth + 16 + "px";
       result.textContent = `You lost! ${computerSelection} beats ${playerSelection}.`;
+      computerScore++;
     }
   }
-  if (
-    playerTotal.textContent.length === 5 ||
-    computerTotal.textContent.length === 5
-  ) {
-    if (playerTotal.textContent.length > computerTotal.textContent.length) {
+  if (playerScore === 5 || computerScore === 5) {
+    if (playerScore > computerScore) {
       result.textContent = `You Win!`;
-      playerFinalScore.textContent = `${playerTotal.textContent.length}`;
-      computerFinalScore.textContent = `${computerTotal.textContent.length}`;
+      playerFinalScore.textContent = `${playerScore}`;
+      computerFinalScore.textContent = `${computerScore}`;
       resetGame.style.display = "block";
-    } else if (
-      playerTotal.textContent.length < computerTotal.textContent.length
-    ) {
+    } else if (playerScore < computerScore) {
       result.textContent = `You Lose!`;
-      playerFinalScore.textContent = `${playerTotal.textContent.length}`;
-      computerFinalScore.textContent = `${computerTotal.textContent.length}`;
+      playerFinalScore.textContent = `${playerScore}`;
+      computerFinalScore.textContent = `${computerScore}`;
       resetGame.style.display = "block";
     }
   }
@@ -78,16 +78,16 @@ function keyPlay(e) {
 
 function newGame(e) {
   //reset all fields
-  if (
-    playerTotal.textContent.length !== 5 &&
-    computerTotal.textContent.length !== 5
-  )
-    return;
+  if (playerScore !== 5 && computerScore !== 5) return;
   if (e.keyCode !== 110) return;
-  playerTotal.textContent = "";
-  computerTotal.textContent = "";
+  playerTotal.style.display = "none";
+  computerTotal.style.display = "none";
+  playerTotal.style.width = "0px";
+  computerTotal.style.width = "0px";
   playerFinalScore.textContent = "";
   computerFinalScore.textContent = "";
+  playerScore = 0;
+  computerScore = 0;
   result.textContent = "";
   resetGame.style.display = "none";
 }
