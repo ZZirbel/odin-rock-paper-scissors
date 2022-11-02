@@ -182,3 +182,7 @@ footer {
     color: var(--font-color);
     font-family: var(--text-font);
 }
+
+.foot {
+    margin: 0 auto 10px auto;
+}

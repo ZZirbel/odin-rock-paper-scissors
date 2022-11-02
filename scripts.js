@@ -6,8 +6,8 @@ function getComputerChoice() {
 
 let playerTotal = document.querySelector("#player-score.progress");
 let computerTotal = document.querySelector("#computer-score.progress");
-let playerFinalScore = document.querySelector("#player-choice");
-let computerFinalScore = document.querySelector("#computer-choice");
+let playerChoice = document.querySelector("#player-choice");
+let computerChoice = document.querySelector("#computer-choice");
 
 /* gameplay using keyboard or buttons - first to 5 */
 let playerScore = 0;
@@ -21,10 +21,14 @@ function playRound(playerSelection) {
   if (playerScore < 5 && computerScore < 5) {
     if (playerSelection === computerSelection) {
       result.textContent = `It's a tie! You both chose ${computerSelection}.`;
+      playerImage.src = `images/${playerSelection}.png`;
+      computerImage.src = `images/${computerSelection}.png`;
     } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
       playerTotal.style.width = playerTotal.offsetWidth + 30 + "px";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
       playerScore++;
+      playerImage.src = `images/${playerSelection}.png`;
+      computerImage.src = `images/${computerSelection}.png`;
     } else if (
       playerSelection === "Scissors" &&
       computerSelection === "Paper"
@@ -32,26 +36,36 @@ function playRound(playerSelection) {
       playerTotal.style.width = playerTotal.offsetWidth + 30 + "px";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
       playerScore++;
+      playerImage.src = `images/${playerSelection}.png`;
+      computerImage.src = `images/${computerSelection}.png`;
     } else if (playerSelection === "Paper" && computerSelection === "Rock") {
       playerTotal.style.width = playerTotal.offsetWidth + 30 + "px";
       result.textContent = `You won! ${playerSelection} beats ${computerSelection}.`;
       playerScore++;
+      playerImage.src = `images/${playerSelection}.png`;
+      computerImage.src = `images/${computerSelection}.png`;
     } else {
       computerTotal.style.width = computerTotal.offsetWidth + 30 + "px";
       result.textContent = `You lost! ${computerSelection} beats ${playerSelection}.`;
       computerScore++;
+      playerImage.src = `images/${playerSelection}.png`;
+      computerImage.src = `images/${computerSelection}.png`;
     }
   }
   if (playerScore === 5 || computerScore === 5) {
     if (playerScore > computerScore) {
       result.textContent = `You Win!`;
-      playerFinalScore.textContent = `${playerScore}`;
-      computerFinalScore.textContent = `${computerScore}`;
+      playerImage.src = "";
+      computerImage.src = "";
+      playerChoice.textContent = `${playerScore}`;
+      computerChoice.textContent = `${computerScore}`;
       resetGame.style.display = "block";
     } else if (playerScore < computerScore) {
       result.textContent = `You Lose!`;
-      playerFinalScore.textContent = `${playerScore}`;
-      computerFinalScore.textContent = `${computerScore}`;
+      playerImage.src = "";
+      computerImage.src = "";
+      playerChoice.textContent = `${playerScore}`;
+      computerChoice.textContent = `${computerScore}`;
       resetGame.style.display = "block";
     }
   }
@@ -77,6 +91,10 @@ function keyPlay(e) {
   playRound();
 }
 
+/* gameplay icons*/
+const playerImage = document.querySelector(".player-image");
+const computerImage = document.querySelector(".computer-image");
+
 /* remove button animation once complete */
 function removeKeyTransition(e) {
   if (e.propertyName !== "transform") return;
@@ -96,8 +114,8 @@ function newGame(e) {
   computerTotal.style.display = "none";
   playerTotal.style.width = "0px";
   computerTotal.style.width = "0px";
-  playerFinalScore.textContent = "";
-  computerFinalScore.textContent = "";
+  playerChoice.textContent = "";
+  computerChoice.textContent = "";
   playerScore = 0;
   computerScore = 0;
   result.textContent = "";
