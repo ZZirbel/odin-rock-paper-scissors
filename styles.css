@@ -155,7 +155,7 @@ i {
     font-family: var(--text-font);
 }
 
-#player-choice, #computer-choice {
+.game-display {
     color: var(--main-color);
     font-size: 40px;
     font-weight: bold;
@@ -176,6 +176,7 @@ i {
     justify-content: space-around;
     align-items: center;
 }
+
 
 /* footer styling */
 footer {

@@ -6,8 +6,8 @@ function getComputerChoice() {
 
 let playerTotal = document.querySelector("#player-score.progress");
 let computerTotal = document.querySelector("#computer-score.progress");
-let playerChoice = document.querySelector("#player-choice");
-let computerChoice = document.querySelector("#computer-choice");
+let playerFinalScore = document.querySelector("#player-final-score");
+let computerFinalScore = document.querySelector("#computer-final-score");
 
 /* gameplay using keyboard or buttons - first to 5 */
 let playerScore = 0;
@@ -57,15 +57,15 @@ function playRound(playerSelection) {
       result.textContent = `You Win!`;
       playerImage.src = "";
       computerImage.src = "";
-      playerChoice.textContent = `${playerScore}`;
-      computerChoice.textContent = `${computerScore}`;
+      playerFinalScore.textContent = `${playerScore}`;
+      computerFinalScore.textContent = `${computerScore}`;
       resetGame.style.display = "block";
     } else if (playerScore < computerScore) {
       result.textContent = `You Lose!`;
       playerImage.src = "";
       computerImage.src = "";
-      playerChoice.textContent = `${playerScore}`;
-      computerChoice.textContent = `${computerScore}`;
+      playerFinalScore.textContent = `${playerScore}`;
+      computerFinalScore.textContent = `${computerScore}`;
       resetGame.style.display = "block";
     }
   }
@@ -114,8 +114,8 @@ function newGame(e) {
   computerTotal.style.display = "none";
   playerTotal.style.width = "0px";
   computerTotal.style.width = "0px";
-  playerChoice.textContent = "";
-  computerChoice.textContent = "";
+  playerFinalScore.textContent = "";
+  computerFinalScore.textContent = "";
   playerScore = 0;
   computerScore = 0;
   result.textContent = "";
