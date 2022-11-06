@@ -25,8 +25,8 @@ _I will update this once I have applied HTML and CSS to this project._
 
 Credit:
 
-[Scissor icon created by Freepik - Flaticon](https://www.flaticon.com/free-icons/barber" title="barber icons)
+[Scissor icon created by Freepik - Flaticon](https://www.flaticon.com/free-icons/barber)
 
-[Rock icon created by Freepik - Flaticon](https://www.flaticon.com/free-icons/mineral" title="mineral icons)
+[Rock icon created by Freepik - Flaticon](https://www.flaticon.com/free-icons/mineral)
 
-[Paper icon created by juicy_fish - Flaticon](https://www.flaticon.com/free-icons/paper" title="paper icons)
+[Paper icon created by Freepik - Flaticon](https://www.flaticon.com/free-icons/paper)
