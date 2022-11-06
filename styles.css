@@ -207,8 +207,16 @@ i {
 
 #new-game {
     text-align: center;
-    color: var(--font-color);
+    color: var(--main-color);
     font-family: var(--text-font);
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+/* new game hover effect */
+#new-game:hover {
+    text-shadow: 0 0 1rem var(--main-color);
+    transform: scale(1.1);
 }
 
 /* gameplay styling */
@@ -236,6 +244,7 @@ footer {
 @media only screen and (max-width: 720px) {
     body {
         font-size: 16px;
+        margin: 0 10px;
     }
     #player, #computer {
         flex-direction: column;
@@ -252,10 +261,29 @@ footer {
     .choice-button:active, .button-active {
         border: 4px inset var(--main-color);
     }
+    .scores {
+        width: 100%;
+    }
+    .player-image {
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .computer-image {
+        max-width: 200px;
+        max-height: 200px;
+    }
 }
 
 @media only screen and (max-width: 415px) {
     i {
         font-size: 30px;
+    }
+    .player-image {
+        max-width: 180px;
+        max-height: 180px;
+    }
+    .computer-image {
+        max-width: 180px;
+        max-height: 180px;
     }
 }
