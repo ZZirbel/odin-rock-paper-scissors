@@ -34,6 +34,13 @@ body {
     font-size: 80px;
     margin: 20px auto;
 }
+.top {
+    margin-bottom: 0;
+}
+
+.bottom {
+    margin-top: 0;
+}
 
 .game-keys {
     color: var(--gameplay-color);
@@ -272,6 +279,9 @@ footer {
         max-width: 200px;
         max-height: 200px;
     }
+    .welcome {
+        font-size: 70px;
+    }
 }
 
 @media only screen and (max-width: 415px) {
@@ -285,5 +295,8 @@ footer {
     .computer-image {
         max-width: 180px;
         max-height: 180px;
+    }
+    .welcome {
+        font-size: 60px;
     }
 }
