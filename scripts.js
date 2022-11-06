@@ -54,14 +54,14 @@ function playRound(playerSelection) {
   }
   if (playerScore === 5 || computerScore === 5) {
     if (playerScore > computerScore) {
-      result.textContent = `You Win!`;
+      result.textContent = `Congratulations, you've won!`;
       playerImage.src = "";
       computerImage.src = "";
       playerFinalScore.textContent = `${playerScore}`;
       computerFinalScore.textContent = `${computerScore}`;
       resetGame.style.display = "block";
     } else if (playerScore < computerScore) {
-      result.textContent = `You Lose!`;
+      result.textContent = `Sorry, better luck next time!`;
       playerImage.src = "";
       computerImage.src = "";
       playerFinalScore.textContent = `${playerScore}`;
