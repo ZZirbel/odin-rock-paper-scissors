@@ -25,7 +25,49 @@ body {
     font-size: 20px;
 }
 
-#title {
+/* Welcome Page Styling */
+.welcome {
+    text-align: center;
+    color: var(--main-color);
+    font-family: var(--title-font);
+    font-weight: normal;
+    font-size: 80px;
+    margin: 20px auto;
+}
+
+.game-keys {
+    color: var(--gameplay-color);
+    font-family: var(--text-font);
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.start {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    margin: 15px auto;
+    font-family: var(--title-font);
+    font-size: 30px;
+    max-width: 230px;
+    padding: 10px 20px;
+    color: var(--main-color);
+    background-color: var(--bg-color);
+    border: 7px outset var(--main-color);
+    border-radius: 5px;
+    opacity: 70%;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+.welcome-foot {
+    font-size: 14px;
+}
+
+/* main game layout */
+#title{
     text-align: center;
     color: var(--main-color);
     font-family: var(--title-font);
@@ -128,13 +170,13 @@ i {
 }
 
 /* button animation */
-.choice-button:hover, .choice-button:focus-visible  {
+.choice-button:hover, .start:hover, .start:focus-visible, .choice-button:focus-visible  {
     border: 7px outset var(--main-color);
     opacity: 100%;
     background-color: #090a07;
 }
 
-.choice-button:active, .button-active {
+.choice-button:active, .start:active, .button-active {
     border: 7px inset var(--main-color);
     transform: scale(1.1);
     opacity: 100%;
