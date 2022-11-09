@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Tourney:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/068b62f776.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Rock Paper Scissors Game</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">Rock Paper Scissors</h1>
+      <p class="text">Do you have what it takes to outwit the computer?</p>
+    </header>
+    <main>
+      <section class="scores">
+        <div id="player">
+          <p class="score player">Your Score</p>
+          <div class="progress-bar">
+            <div class="progress-container player">
+              <div id="player-score" class="progress"></div>
+            </div>
+          </div>
+        </div>
+        <div id="computer">
+          <p class="score computer">Bots Score</p>
+          <div class="progress-bar">
+            <div class="progress-container computer">
+              <div id="computer-score" class="progress"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="buttons">
+        <button class="choice-button" data-key="114" id="Rock">
+          <span class="selection">Rock</span
+          ><i class="fa-solid fa-hand-fist"></i>
+        </button>
+        <button class="choice-button" data-key="112" id="Paper">
+          <span class="selection">Paper</span><i class="fa-solid fa-hand"></i>
+        </button>
+        <button class="choice-button" data-key="115" id="Scissors">
+          <span class="selection">Scissors</span
+          ><i class="fa-solid fa-hand-peace"></i>
+        </button>
+      </section>
+      <section class="results">
+        <div id="result"></div>
+      </section>
+      <section class="gameplay">
+        <div class="game-display">
+          <img class="player-image" src="" />
+          <p id="player-final-score"></p>
+        </div>
+        <a href="gamepage.html" id="new-game"
+          >Press 'N' or click here to start a new game</a
+        >
+        <div class="game-display">
+          <img class="computer-image" src="" />
+          <p id="computer-final-score"></p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p class="foot">&copy; Zan Zirbel 2022</p>
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>
